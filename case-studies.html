@@ -194,6 +194,21 @@
   .csmeta{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}
   .csmeta p{font-size:13.5px;margin-bottom:6px;line-height:1.6}
   .csmeta .k{color:var(--teal);font-weight:600}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:18px;transition:all .2s}
+  .card:hover{border-color:rgba(100,255,218,.45);background:rgba(100,255,218,.04)}
+  .card a.t{font-size:16.5px;color:var(--bright);font-weight:600;display:inline-block}
+  .card a.t:hover{color:var(--teal)}
+  .card .d{font-size:14px;margin-top:5px;line-height:1.6;color:var(--slate)}
+  @media(max-width:560px){.cards{grid-template-columns:1fr}}
+  .backlink{font-size:13.5px;color:var(--teal);display:inline-block;margin-bottom:20px}
+  .csmeta{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+  .csmeta p{font-size:14.5px;margin-bottom:7px;line-height:1.65}
+  .csmeta .k{color:var(--teal);font-weight:600}
+  .linkrow{margin-top:16px;font-size:14px}
+  .linkrow a{color:var(--teal);margin-right:20px}
+  .scennote{font-size:13px;color:#8892b0;margin-top:18px;line-height:1.6}
 </style>
 </head>
 <body>
@@ -234,138 +249,37 @@
   <main>
     <div class="subnav"><a href="#operations">Operations</a><a href="#product">Product</a></div>
 
-<section id="case-studies">
+    <section>
       <h2 class="sec-title">Case Studies</h2>
-      <p style="font-size:15.5px;margin-bottom:6px">Scenario case studies — realistic business problems analyzed the way I work: find the root cause, prioritize the fix, and define how success gets measured. Arranged by phase — operations runs planning → fulfillment → distribution → manufacturing → support → service operations; product runs activation → conversion → growth → retention → accessibility → marketplace. Each study lists what I learnt, the tools and tech stack, and what makes it different. Baselines are stated assumptions; impacts are labelled projections in the full write-ups.</p>
-      <div class="grouplab" id="operations">Operations</div>
-<article class="csitem">
-        <h3>Inventory: Stockouts vs Overstock</h3>
-        <p>Fill rate is 91% while 14% of inventory value sits in dead stock — both problems at once (scenario baseline).</p>
-        <details class="more"><summary>Read the analysis</summary>
-          <p><strong>What the analysis found.</strong> One reorder rule is applied to every SKU, so fast, variable items stock out while slow movers pile up; lead-time variability is ignored entirely.</p>
-          <p><strong>The fix.</strong> ABC/XYZ segmentation with reorder points built from real demand and lead-time variability (safety stock = z·σ·√L) and EOQ for order sizing.</p>
-          <div class="csmeta"><p><span class="k">Phase:</span> Operations · Planning & Inventory</p><p><span class="k">What I learnt:</span> How one reorder rule creates stockouts and dead stock at the same time — and how safety stock (z·σ·√L) and EOQ fix each segment differently.</p><p><span class="k">Tools &amp; tech stack:</span> Excel modeling · ABC/XYZ segmentation · EOQ & safety-stock formulas · demand/lead-time variability analysis</p><p><span class="k">What makes it different:</span> Solves stockouts AND overstock together with segmentation, instead of one blanket rule for every SKU.</p></div>
-          <div class="links"><a href="https://github.com/Ppatil63/data-projects/blob/main/case-studies/operations/inventory-stockouts-overstock.md" target="_blank" rel="noopener">Full case study ↗</a></div>
-        </details>
-      </article>
-<article class="csitem">
-        <h3>Warehouse Fulfillment Bottleneck</h3>
-        <p>Same-day ship rate is 86% against a 95% promise, and overtime is climbing (scenario baseline).</p>
-        <details class="more"><summary>Read the analysis</summary>
-          <p><strong>What the analysis found.</strong> Pack — not pick — is the real constraint: pickers finish waves faster than pack stations can clear them, and fast movers are slotted far from pack, adding travel to every order.</p>
-          <p><strong>The fix.</strong> ABC re-slotting of fast movers near pack, plus hourly mini-waves sized to pack capacity. Targets the constraint first instead of adding pick headcount.</p>
-          <div class="csmeta"><p><span class="k">Phase:</span> Operations · Fulfillment</p><p><span class="k">What I learnt:</span> Theory of constraints in practice: the bottleneck was pack, not pick — adding pickers would have made the pile-up worse.</p><p><span class="k">Tools &amp; tech stack:</span> Process mapping (as-is) · ABC slotting analysis · wave planning · throughput/capacity math in Excel</p><p><span class="k">What makes it different:</span> Fixes the actual constraint (pack-station capacity) with mini-waves, before spending on headcount or automation.</p></div>
-          <div class="links"><a href="https://github.com/Ppatil63/data-projects/blob/main/case-studies/operations/warehouse-fulfillment-bottleneck.md" target="_blank" rel="noopener">Full case study ↗</a></div>
-        </details>
-      </article>
-<article class="csitem">
-        <h3>Last-Mile Delivery On-Time Performance</h3>
-        <p>On-time delivery is 81% against a 95% client target, with failed first attempts driving repeat cost (scenario baseline).</p>
-        <details class="more"><summary>Read the analysis</summary>
-          <p><strong>What the analysis found.</strong> Routes are sequenced by distance alone, ignoring promised time windows; the longest routes leave last, and bad addresses are only discovered at the door.</p>
-          <p><strong>The fix.</strong> Time-window-aware route sequencing, longest routes dispatched first, and address validation at order intake before a route is ever built.</p>
-          <div class="csmeta"><p><span class="k">Phase:</span> Operations · Distribution & Last-Mile</p><p><span class="k">What I learnt:</span> Route plans built on distance alone fail time-window promises; the longest routes must leave first, and bad addresses should die at intake, not at the door.</p><p><span class="k">Tools &amp; tech stack:</span> Time-window route sequencing (VRPTW basics) · address validation at order intake · OTP measurement by route/zone</p><p><span class="k">What makes it different:</span> Moves part of the fix upstream to order-intake data quality — most routing studies only optimize the route itself.</p></div>
-          <div class="links"><a href="https://github.com/Ppatil63/data-projects/blob/main/case-studies/operations/last-mile-delivery-otp.md" target="_blank" rel="noopener">Full case study ↗</a></div>
-        </details>
-      </article>
-<article class="csitem">
-        <h3>Manufacturing Downtime & OEE</h3>
-        <p>OEE is 54% (78% availability × 82% performance × 84% quality) while weekend overtime runs every week (scenario baseline).</p>
-        <details class="more"><summary>Read the analysis</summary>
-          <p><strong>What the analysis found.</strong> Changeovers take 95 minutes and repeat failures wait on off-site spare parts — availability losses dwarf the other two OEE components.</p>
-          <p><strong>The fix.</strong> SMED changeover reduction (95 → 55 min) and on-site spares for repeat failures, before any capital spend on a second line.</p>
-          <div class="csmeta"><p><span class="k">Phase:</span> Operations · Manufacturing</p><p><span class="k">What I learnt:</span> OEE only helps when decomposed: availability (78%) was the real loss, driven by 95-minute changeovers and waiting on off-site spares.</p><p><span class="k">Tools &amp; tech stack:</span> OEE decomposition (availability × performance × quality) · downtime Pareto · SMED changeover analysis</p><p><span class="k">What makes it different:</span> A no-capex improvement path — SMED and on-site spares first, before any discussion of a second line.</p></div>
-          <div class="links"><a href="https://github.com/Ppatil63/data-projects/blob/main/case-studies/operations/manufacturing-downtime-oee.md" target="_blank" rel="noopener">Full case study ↗</a></div>
-        </details>
-      </article>
-<article class="csitem">
-        <h3>Support Operations Queue Redesign</h3>
-        <p>28% of first responses breach SLA, the backlog is 1,900 tickets, and 24% of contacts are repeats (scenario baseline).</p>
-        <details class="more"><summary>Read the analysis</summary>
-          <p><strong>What the analysis found.</strong> All tickets enter one queue regardless of type, how-to and status questions consume agent time, and recurring issues are closed ticket-by-ticket instead of fixed once.</p>
-          <p><strong>The fix.</strong> Tiered triage with skill-based routing, deflection of how-to/status volume to self-serve, and a problem-management loop that kills repeat issues at the root.</p>
-          <div class="csmeta"><p><span class="k">Phase:</span> Operations · Support & Service Ops</p><p><span class="k">What I learnt:</span> Backlogs are a routing and repeat-contact problem before they are a staffing problem: 24% repeat contacts meant the queue was refilling itself.</p><p><span class="k">Tools &amp; tech stack:</span> Tiered triage & skill-based routing · SLA design · deflection/self-serve analysis · ITIL problem management</p><p><span class="k">What makes it different:</span> Attacks repeat issues with a problem-management loop — closing the root cause, not just answering tickets faster.</p></div>
-          <div class="links"><a href="https://github.com/Ppatil63/data-projects/blob/main/case-studies/operations/support-queue-redesign.md" target="_blank" rel="noopener">Full case study ↗</a></div>
-        </details>
-      </article>
-<article class="csitem">
-        <h3>Hospital Outpatient Scheduling</h3>
-        <p>23% no-shows alongside 38-minute average waits and only 74% schedule utilization (scenario baseline).</p>
-        <details class="more"><summary>Read the analysis</summary>
-          <p><strong>What the analysis found.</strong> Every appointment gets the same slot length (measured visits actually run 31/17/9 minutes by type), reminders are inconsistent, and no-shows are uniform — so overbooking is never used where it would help.</p>
-          <p><strong>The fix.</strong> A standard reminder cadence, slot templates matched to measured visit lengths, and segmented overbooking only for proven high no-show groups.</p>
-          <div class="csmeta"><p><span class="k">Phase:</span> Operations · Service Operations (Healthcare)</p><p><span class="k">What I learnt:</span> Uniform slot lengths waste capacity when real visit lengths differ (31/17/9 min by type); overbooking only works when segmented by proven no-show behavior.</p><p><span class="k">Tools &amp; tech stack:</span> Slot-template design from measured service times · reminder cadence design · segmented overbooking policy · utilization/wait analysis</p><p><span class="k">What makes it different:</span> Balances no-shows against waiting time with measured visit data, instead of blanket overbooking that punishes everyone.</p></div>
-          <div class="links"><a href="https://github.com/Ppatil63/data-projects/blob/main/case-studies/operations/hospital-outpatient-scheduling.md" target="_blank" rel="noopener">Full case study ↗</a></div>
-        </details>
-      </article>
-      <div class="grouplab" id="product">Product</div>
-<article class="csitem">
-        <h3>SaaS Onboarding Drop-Off</h3>
-        <p>Only 24% of trial users activate and 6% convert to paid (scenario baseline).</p>
-        <details class="more"><summary>Read the analysis</summary>
-          <p><strong>What the analysis found.</strong> Onboarding front-loads configuration before any value, and 'activation' was never defined from what converters actually do — the funnel leaks before the core action.</p>
-          <p><strong>The fix.</strong> Define activation from converter behavior (core action + teammate invite) and re-sequence onboarding so value comes before configuration.</p>
-          <div class="csmeta"><p><span class="k">Phase:</span> Product · Activation</p><p><span class="k">What I learnt:</span> Activation must be defined from what converters actually do (core action + invite), not from what the signup form collects.</p><p><span class="k">Tools &amp; tech stack:</span> Funnel analysis · cohort comparison (converted vs churned trials) · onboarding re-sequencing · activation metrics</p><p><span class="k">What makes it different:</span> Reorders onboarding so value comes before configuration — the opposite of the standard form-first flow.</p></div>
-          <div class="links"><a href="https://github.com/Ppatil63/data-projects/blob/main/case-studies/product/saas-onboarding-dropoff.md" target="_blank" rel="noopener">Full case study ↗</a></div>
-        </details>
-      </article>
-<article class="csitem">
-        <h3>E-Commerce Checkout Abandonment</h3>
-        <p>Only ~37% of shoppers who start checkout finish it (scenario baseline).</p>
-        <details class="more"><summary>Read the analysis</summary>
-          <p><strong>What the analysis found.</strong> Shipping cost appears for the first time at the final step, guest checkout is buried, the form asks for more than the payment needs, and a failed payment is a dead end.</p>
-          <p><strong>The fix.</strong> Shipping cost revealed at cart, guest checkout first, a shorter form, and a payment-failure recovery flow — each change shipped as its own pre-registered A/B test.</p>
-          <div class="csmeta"><p><span class="k">Phase:</span> Product · Conversion</p><p><span class="k">What I learnt:</span> Checkout leaks are specific and separable: late shipping-cost reveal, buried guest checkout, form weight, and payment failure as a dead end.</p><p><span class="k">Tools &amp; tech stack:</span> Checkout funnel analysis · pre-registered A/B test design · form analytics · payment-failure recovery flows</p><p><span class="k">What makes it different:</span> Every fix ships as its own isolated experiment with a guardrail metric — no bundled redesign you can't learn from.</p></div>
-          <div class="links"><a href="https://github.com/Ppatil63/data-projects/blob/main/case-studies/product/ecommerce-checkout-abandonment.md" target="_blank" rel="noopener">Full case study ↗</a></div>
-        </details>
-      </article>
-<article class="csitem">
-        <h3>Food Delivery: Late Orders Killing Repeat Business</h3>
-        <p>Only 74% of orders arrive inside the promised window, and late customers reorder at half the rate (scenario baseline).</p>
-        <details class="more"><summary>Read the analysis</summary>
-          <p><strong>What the analysis found.</strong> Promises are built from average prep times, so variance — not the average — breaks them; couriers are dispatched before food is ready and stacked too deep at peak.</p>
-          <p><strong>The fix.</strong> Dynamic promises built from prep-time variance, just-in-time courier dispatch, and caps on stacked orders at peak.</p>
-          <div class="csmeta"><p><span class="k">Phase:</span> Product · Growth & Repeat Purchase</p><p><span class="k">What I learnt:</span> Delivery promises built on average prep time break on variance; the promise itself is a product feature that drives repeat orders.</p><p><span class="k">Tools &amp; tech stack:</span> Prep-time variance analysis · promise/dispatch logic design · repeat-rate cohort analysis</p><p><span class="k">What makes it different:</span> Treats the ETA promise and courier dispatch timing as the product — not discounts or marketing — to win back repeat orders.</p></div>
-          <div class="links"><a href="https://github.com/Ppatil63/data-projects/blob/main/case-studies/product/food-delivery-late-orders.md" target="_blank" rel="noopener">Full case study ↗</a></div>
-        </details>
-      </article>
-<article class="csitem">
-        <h3>Subscription Churn at Month 2–3</h3>
-        <p>Churn spikes to ~11% when the introductory price steps up, and 18% of all churn is involuntary (scenario baseline).</p>
-        <details class="more"><summary>Read the analysis</summary>
-          <p><strong>What the analysis found.</strong> Two separate problems were being treated as one: failed payments (fixable with dunning) and a price surprise nobody warned users about, on top of a usage-decay signal visible from week 3.</p>
-          <p><strong>The fix.</strong> Payment recovery first, advance notice before the price step-up, and intervention triggered by the week 3–6 usage-decay signal.</p>
-          <div class="csmeta"><p><span class="k">Phase:</span> Product · Retention & Lifecycle</p><p><span class="k">What I learnt:</span> Churn is two problems wearing one label: involuntary (failed payments, 18%) and the price step-up surprise — each with a different fix and owner.</p><p><span class="k">Tools &amp; tech stack:</span> Cohort churn analysis · dunning/payment recovery · usage-decay signal design · lifecycle messaging</p><p><span class="k">What makes it different:</span> Fixes payments (dunning) before product changes, and intervenes on the week 3–6 decay signal instead of at cancellation.</p></div>
-          <div class="links"><a href="https://github.com/Ppatil63/data-projects/blob/main/case-studies/product/subscription-churn-month-2-3.md" target="_blank" rel="noopener">Full case study ↗</a></div>
-        </details>
-      </article>
-<article class="csitem">
-        <h3>Telemedicine Booking: Accessibility Failure</h3>
-        <p>Booking completion is 58% for patients 65+ vs 86% for younger patients (scenario baseline).</p>
-        <details class="more"><summary>Read the analysis</summary>
-          <p><strong>What the analysis found.</strong> A WCAG audit maps directly onto the failing steps: 3.2:1 text contrast (standard is 4.5:1), 32px tap targets, and session timeouts that end silently mid-booking.</p>
-          <p><strong>The fix.</strong> WCAG 2.2 AA remediation of the booking flow plus assisted and caregiver booking paths, measured by age-group completion parity.</p>
-          <div class="csmeta"><p><span class="k">Phase:</span> Product · Accessibility & Inclusive Design</p><p><span class="k">What I learnt:</span> Accessibility failures map exactly onto funnel drop-off: 3.2:1 contrast, 32px targets, and silent timeouts were the booking funnel for 65+ patients.</p><p><span class="k">Tools &amp; tech stack:</span> WCAG 2.2 AA audit · age-segment funnel analysis · assisted/caregiver flow design · completion-parity metrics</p><p><span class="k">What makes it different:</span> Uses accessibility remediation as the growth lever for an underserved segment — compliance work that directly lifts conversion.</p></div>
-          <div class="links"><a href="https://github.com/Ppatil63/data-projects/blob/main/case-studies/product/telemedicine-accessibility-booking.md" target="_blank" rel="noopener">Full case study ↗</a></div>
-        </details>
-      </article>
-<article class="csitem">
-        <h3>Job-Matching Platform for Freshers</h3>
-        <p>Application-to-interview conversion is 4.1%, and 46% of applications are never answered at all (scenario baseline).</p>
-        <details class="more"><summary>Read the analysis</summary>
-          <p><strong>What the analysis found.</strong> Matching ranks on keywords instead of verified skills, and employers face no cost for ghosting — so freshers spray applications and trust collapses on both sides.</p>
-          <p><strong>The fix.</strong> Transparent skills-based matching with verified skill signals, plus employer response accountability: nudges, visible response times, and auto-close at day 14.</p>
-          <div class="csmeta"><p><span class="k">Phase:</span> Product · Marketplace & Trust</p><p><span class="k">What I learnt:</span> Two-sided marketplaces fail on trust before features: 46% of applications were never answered, so both sides stopped believing the platform.</p><p><span class="k">Tools &amp; tech stack:</span> Skills-based matching design · verified skill signals · employer response accountability (nudges, response-time display, auto-close)</p><p><span class="k">What makes it different:</span> Makes employer behavior (response time) a visible product feature — accountability as the matching algorithm's missing input.</p></div>
-          <div class="links"><a href="https://github.com/Ppatil63/data-projects/blob/main/case-studies/product/job-matching-freshers-conversion.md" target="_blank" rel="noopener">Full case study ↗</a></div>
-        </details>
-      </article>
+      <p style="font-size:15.5px;margin-bottom:18px">Scenario case studies — realistic business problems analyzed the way I work: find the root cause, prioritize the fix, and define how success gets measured. Arranged by phase — operations runs planning &#8594; fulfillment &#8594; distribution &#8594; manufacturing &#8594; support &#8594; service operations; product runs activation &#8594; conversion &#8594; growth &#8594; retention &#8594; accessibility &#8594; marketplace. Click a case study to open it.</p>
     </section>
 
-    
+    <section>
+      <div class="grouplab" id="operations" style="margin-top:6px">Operations</div>
+      <div class="cards">
+        <div class="card"><a class="t" href="inventory-stockouts-overstock.html">Inventory: Stockouts vs Overstock &#8594;</a><div class="d">Fill rate is 91% while 14% of inventory value sits in dead stock — both problems at once (scenario baseline).…</div></div>
+        <div class="card"><a class="t" href="warehouse-fulfillment-bottleneck.html">Warehouse Fulfillment Bottleneck &#8594;</a><div class="d">Same-day ship rate is 86% against a 95% promise, and overtime is climbing (scenario baseline).…</div></div>
+        <div class="card"><a class="t" href="last-mile-delivery-otp.html">Last-Mile Delivery On-Time Performance &#8594;</a><div class="d">On-time delivery is 81% against a 95% client target, with failed first attempts driving repeat cost (scenario baseline).…</div></div>
+        <div class="card"><a class="t" href="manufacturing-downtime-oee.html">Manufacturing Downtime & OEE &#8594;</a><div class="d">OEE is 54% (78% availability × 82% performance × 84% quality) while weekend overtime runs every week (scenario baseline).…</div></div>
+        <div class="card"><a class="t" href="support-queue-redesign.html">Support Operations Queue Redesign &#8594;</a><div class="d">28% of first responses breach SLA, the backlog is 1,900 tickets, and 24% of contacts are repeats (scenario baseline).…</div></div>
+        <div class="card"><a class="t" href="hospital-outpatient-scheduling.html">Hospital Outpatient Scheduling &#8594;</a><div class="d">23% no-shows alongside 38-minute average waits and only 74% schedule utilization (scenario baseline).…</div></div>
+      </div>
+      <div class="grouplab" id="product">Product</div>
+      <div class="cards">
+        <div class="card"><a class="t" href="saas-onboarding-dropoff.html">SaaS Onboarding Drop-Off &#8594;</a><div class="d">Only 24% of trial users activate and 6% convert to paid (scenario baseline).…</div></div>
+        <div class="card"><a class="t" href="ecommerce-checkout-abandonment.html">E-Commerce Checkout Abandonment &#8594;</a><div class="d">Only ~37% of shoppers who start checkout finish it (scenario baseline).…</div></div>
+        <div class="card"><a class="t" href="food-delivery-late-orders.html">Food Delivery: Late Orders Killing Repeat Business &#8594;</a><div class="d">Only 74% of orders arrive inside the promised window, and late customers reorder at half the rate (scenario baseline).…</div></div>
+        <div class="card"><a class="t" href="subscription-churn-month-2-3.html">Subscription Churn at Month 2–3 &#8594;</a><div class="d">Churn spikes to ~11% when the introductory price steps up, and 18% of all churn is involuntary (scenario baseline).…</div></div>
+        <div class="card"><a class="t" href="telemedicine-accessibility-booking.html">Telemedicine Booking: Accessibility Failure &#8594;</a><div class="d">Booking completion is 58% for patients 65+ vs 86% for younger patients (scenario baseline).…</div></div>
+        <div class="card"><a class="t" href="job-matching-freshers-conversion.html">Job-Matching Platform for Freshers &#8594;</a><div class="d">Application-to-interview conversion is 4.1%, and 46% of applications are never answered at all (scenario baseline).…</div></div>
+      </div>
+    </section>
+
     <footer>
       <p>Prathamesh Vijay Patil &middot; Phoenix, AZ. Design inspired by the classic two-column portfolio layout. Built with plain HTML &amp; CSS and hosted on GitHub Pages.</p>
     </footer>
-    </main>
+      </main>
+</main>
 </main>
 </div>
 
