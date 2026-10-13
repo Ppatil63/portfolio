@@ -223,6 +223,17 @@
   .roles .first{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:600;color:var(--teal)}
 
   .preline{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(20px,2.6vw,26px);color:var(--slate)}
+
+  /* harmony pass: one display voice (the sans, matching the left rail),
+     serif kept only as a quiet accent; headline steps down a scale so the
+     name on the left stays the single hero of the viewport */
+  .intro-art{padding-top:8px}
+  .intro-art::before{width:260px;height:260px;background:radial-gradient(circle,rgba(100,255,218,.08),transparent 65%)}
+  .preline{font-size:clamp(18px,2.2vw,22px)}
+  .giant{font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;font-weight:700;font-size:clamp(33px,4vw,43px);letter-spacing:-.02em;line-height:1.14;margin-top:8px}
+  .aspire{font-size:16.5px;line-height:1.7;margin-top:14px}
+  .jstep .r{font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;font-weight:600;font-size:15px;letter-spacing:0}
+  .pull .q{font-size:22px}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
 </head>
