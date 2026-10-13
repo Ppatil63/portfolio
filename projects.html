@@ -192,11 +192,12 @@
   @media(max-width:560px){.teasers{grid-template-columns:1fr}}
 
   .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  a.card{border:1px solid var(--line);border-radius:10px;padding:18px;display:block;transition:all .2s}
-  a.card:hover{border-color:rgba(100,255,218,.45);background:rgba(100,255,218,.04)}
-  a.card .t{font-size:16.5px;color:var(--bright);font-weight:600;margin-top:10px}
-  a.card .d{font-size:14px;margin-top:5px;line-height:1.6;color:var(--slate)}
-  a.card .go{font-size:13px;color:var(--teal);margin-top:10px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:18px;transition:all .2s}
+  .card:hover{border-color:rgba(100,255,218,.45);background:rgba(100,255,218,.04)}
+  .card a.t{font-size:16.5px;color:var(--bright);font-weight:600;display:inline-block}
+  .card a.t:hover{color:var(--teal)}
+  .card .d{font-size:14px;margin-top:5px;line-height:1.6;color:var(--slate)}
+  
   a.card img.dthumb{width:100%;height:150px;object-fit:cover;border-radius:6px;border:1px solid var(--line);display:block}
   a.card .monogram{height:150px;border-radius:6px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:700;color:var(--bright);background:rgba(100,255,218,.05);letter-spacing:.03em}
   @media(max-width:560px){.cards{grid-template-columns:1fr}}
@@ -250,12 +251,12 @@
     <section id="projects">
       <h2 class="sec-title">Work Projects</h2>
       <div class="cards">
-        <a class="card" href="fieldcore-repeat-tickets.html"><div class="monogram">FC</div><div class="t">Turning Repeat Tickets Into Automation</div><div class="d">L2 support for GE FieldCore at TCS, where bad data stopped field work. Result: ticket flow dropped by around 30% during peak support time.…</div><div class="go">View project &#8594;</div></a>
-        <a class="card" href="sams-honeywell.html"><div class="monogram">SA</div><div class="t">Smart Accessible Management System</div><div class="d">An AI-assisted platform to make air travel easier for passengers who need accessibility support, taken from discovery to prototype at the ASU Honeywel…</div><div class="go">View project &#8594;</div></a>
-        <a class="card" href="savli-fleet-inventory.html"><div class="monogram">SI</div><div class="t">Fleet & Inventory Optimization</div><div class="d">Quarry-to-delivery operations at Savli Infra. Result: logistics costs cut 15% ($10K/year), profit up $30K/year, 181 tons/day held with zero missed dea…</div><div class="go">View project &#8594;</div></a>
-        <a class="card" href="ecommerce-data-warehouse.html"><div class="monogram">DW</div><div class="t">E-commerce Data Warehouse & Power BI</div><div class="d">A working data warehouse built end to end — raw sales data in, a clean star schema and dashboard out. Result: 608 raw rows cleaned to 558 loaded rows,…</div><div class="go">View project &#8594;</div></a>
-        <a class="card" href="ai-assistant-ba-study.html"><div class="monogram">AI</div><div class="t">AI Assistant — A Business Analyst Case Study</div><div class="d">A full BA workup for an AI assistant across email, chat, and project tools — shown as analysis, not a product pitch. Result: a complete, traceable req…</div><div class="go">View project &#8594;</div></a>
-        <a class="card" href="sql-portfolio.html"><div class="monogram">SQL</div><div class="t">SQL Portfolio — 15 Business Questions</div><div class="d">Fifteen real business questions answered with SQL — joins, aggregations, CTEs, and window functions — each explained in plain English. Built over a 40…</div><div class="go">View project &#8594;</div></a>
+        <div class="card"><a class="t" href="fieldcore-repeat-tickets.html">Turning Repeat Tickets Into Automation &#8594;</a><div class="d">L2 support for GE FieldCore at TCS, where bad data stopped field work. Result: ticket flow dropped by around 30% during peak support time.…</div></div>
+        <div class="card"><a class="t" href="sams-honeywell.html">Smart Accessible Management System &#8594;</a><div class="d">An AI-assisted platform to make air travel easier for passengers who need accessibility support, taken from discovery to prototype at the ASU Honeywel…</div></div>
+        <div class="card"><a class="t" href="savli-fleet-inventory.html">Fleet & Inventory Optimization &#8594;</a><div class="d">Quarry-to-delivery operations at Savli Infra. Result: logistics costs cut 15% ($10K/year), profit up $30K/year, 181 tons/day held with zero missed dea…</div></div>
+        <div class="card"><a class="t" href="ecommerce-data-warehouse.html">E-commerce Data Warehouse & Power BI &#8594;</a><div class="d">A working data warehouse built end to end — raw sales data in, a clean star schema and dashboard out. Result: 608 raw rows cleaned to 558 loaded rows,…</div></div>
+        <div class="card"><a class="t" href="ai-assistant-ba-study.html">AI Assistant — A Business Analyst Case Study &#8594;</a><div class="d">A full BA workup for an AI assistant across email, chat, and project tools — shown as analysis, not a product pitch. Result: a complete, traceable req…</div></div>
+        <div class="card"><a class="t" href="sql-portfolio.html">SQL Portfolio — 15 Business Questions &#8594;</a><div class="d">Fifteen real business questions answered with SQL — joins, aggregations, CTEs, and window functions — each explained in plain English. Built over a 40…</div></div>
       </div>
     </section>
 
@@ -263,11 +264,11 @@
       <h2 class="sec-title">Data Projects</h2>
       <p style="font-size:15.5px;margin-bottom:16px">Five end-to-end ETL projects with live code. Click any project for its visualisation, insights, and GitHub code.</p>
       <div class="cards">
-        <a class="card" href="retail-sales-etl-dashboard.html"><div class="monogram">RS</div><div class="t">Retail Sales ETL & Dashboard</div><div class="d">End-to-end pipeline on 9,994 real retail orders (Sample Superstore): cleaned in pandas, loaded into a SQLite star schema (fact + 4 dimensions), analyz…</div><div class="go">View project &#8594;</div></a>
-        <a class="card" href="support-ticket-sla-etl.html"><div class="monogram">SLA</div><div class="t">Support Ticket SLA Analytics</div><div class="d">Ticket pipeline scoring SLA performance by priority, category, and team — breach rates, resolution times, reopen rate, and backlog aging. Built on see…</div><div class="go">View project &#8594;</div></a>
-        <a class="card" href="hr-attrition-etl-dashboard.html"><div class="monogram">HR</div><div class="t">HR Attrition ETL & Dashboard</div><div class="d">IBM's real workforce dataset (1,470 employees) through a full ETL into SQLite, with attrition analysis by department, overtime, tenure, and income ban…</div><div class="go">View project &#8594;</div></a>
-        <a class="card" href="stock-market-etl.html"><div class="monogram">SM</div><div class="t">Stock Market ETL — 5 Tickers, 5 Years</div><div class="d">Daily price pipeline for AAPL, MSFT, AMZN, NVDA, and GOOG (6,270 rows): normalized into one warehouse table, with SQL window functions for 30/90-day m…</div><div class="go">View project &#8594;</div></a>
-        <a class="card" href="logistics-delivery-etl.html"><div class="monogram">LG</div><div class="t">Logistics Delivery Performance ETL</div><div class="d">Shipment pipeline (2,500 sample shipments, labelled) analyzing on-time performance, carrier cost vs reliability, and the cost of late deliveries acros…</div><div class="go">View project &#8594;</div></a>
+        <div class="card"><a class="t" href="retail-sales-etl-dashboard.html">Retail Sales ETL & Dashboard &#8594;</a><div class="d">End-to-end pipeline on 9,994 real retail orders (Sample Superstore): cleaned in pandas, loaded into a SQLite star schema (fact + 4 dimensions), analyz…</div></div>
+        <div class="card"><a class="t" href="support-ticket-sla-etl.html">Support Ticket SLA Analytics &#8594;</a><div class="d">Ticket pipeline scoring SLA performance by priority, category, and team — breach rates, resolution times, reopen rate, and backlog aging. Built on see…</div></div>
+        <div class="card"><a class="t" href="hr-attrition-etl-dashboard.html">HR Attrition ETL & Dashboard &#8594;</a><div class="d">IBM's real workforce dataset (1,470 employees) through a full ETL into SQLite, with attrition analysis by department, overtime, tenure, and income ban…</div></div>
+        <div class="card"><a class="t" href="stock-market-etl.html">Stock Market ETL — 5 Tickers, 5 Years &#8594;</a><div class="d">Daily price pipeline for AAPL, MSFT, AMZN, NVDA, and GOOG (6,270 rows): normalized into one warehouse table, with SQL window functions for 30/90-day m…</div></div>
+        <div class="card"><a class="t" href="logistics-delivery-etl.html">Logistics Delivery Performance ETL &#8594;</a><div class="d">Shipment pipeline (2,500 sample shipments, labelled) analyzing on-time performance, carrier cost vs reliability, and the cost of late deliveries acros…</div></div>
       </div>
     </section>
 
