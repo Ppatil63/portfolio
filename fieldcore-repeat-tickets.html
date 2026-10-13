@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('pp-theme')||'beige';}catch(e){document.documentElement.dataset.theme='beige';}})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Turning Repeat Tickets Into Automation — Prathamesh Vijay Patil</title>
@@ -48,7 +49,7 @@
     --bright:#e6f1ff;
     --text:#94a3b8;
     --dim:#64748b;
-    --accent:#64ffda;
+    --accent:var(--accent);
     --card:rgba(148,163,184,.08);
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -63,7 +64,7 @@
   a{color:inherit;text-decoration:none}
   .spotlight{
     position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:radial-gradient(600px circle at var(--x,50%) var(--y,50%), rgba(29,78,216,.15), transparent 80%);
+    background:radial-gradient(600px circle at var(--x,50%) var(--y,50%), rgba(var(--acc-rgb),.12), transparent 80%);
   }
   .layout{
     position:relative;z-index:1;
@@ -76,7 +77,7 @@
     position:sticky;top:0;max-height:100vh;width:48%;
     padding:96px 0;display:flex;flex-direction:column;justify-content:space-between;
   }
-  header.left img.photo{width:80px;height:80px;border-radius:50%;object-fit:cover;margin-bottom:20px;border:2px solid rgba(100,255,218,.35)}
+  header.left img.photo{width:80px;height:80px;border-radius:50%;object-fit:cover;margin-bottom:20px;border:2px solid rgba(var(--acc-rgb),.35)}
   header.left h1{font-size:52px;font-weight:700;color:var(--bright);letter-spacing:-0.028em;line-height:1.1}
   header.left h2.role{font-size:20px;font-weight:500;color:var(--bright);margin-top:12px}
   header.left p.pitch{margin-top:16px;max-width:360px;font-size:16px;line-height:1.65}
@@ -133,7 +134,7 @@
   .tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:12px}
   .tags li{
     font-size:12.5px;font-weight:500;color:var(--accent);
-    background:rgba(100,255,218,.1);border-radius:999px;padding:4px 12px;line-height:1.4;
+    background:rgba(var(--acc-rgb),.1);border-radius:999px;padding:4px 12px;line-height:1.4;
   }
 
   .proj{display:grid;grid-template-columns:150px 1fr;gap:18px}
@@ -143,7 +144,7 @@
   }
   .thumb .mono{font-size:24px;font-weight:700;color:var(--bright);letter-spacing:.02em}
   .thumb .cap{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
-  .item:hover .thumb{border-color:rgba(100,255,218,.4)}
+  .item:hover .thumb{border-color:rgba(var(--acc-rgb),.4)}
 
   details{margin-top:10px}
   details summary{cursor:pointer;list-style:none;font-size:13.5px;font-weight:600;color:var(--bright);width:fit-content}
@@ -183,22 +184,22 @@
 
   .subnav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
   .subnav a{border:1px solid var(--line);padding:7px 15px;border-radius:999px;font-size:13px;color:var(--slate)}
-  .subnav a:hover{color:var(--teal);border-color:rgba(100,255,218,.45)}
+  .subnav a:hover{color:var(--teal);border-color:rgba(var(--acc-rgb),.45)}
   .teasers{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .teasers a{border:1px solid var(--line);border-radius:10px;padding:20px;display:block}
-  .teasers a:hover{border-color:rgba(100,255,218,.45);background:rgba(100,255,218,.04)}
+  .teasers a:hover{border-color:rgba(var(--acc-rgb),.45);background:rgba(var(--acc-rgb),.04)}
   .teasers .t{font-size:17px;color:var(--bright);font-weight:600}
   .teasers .d{font-size:14px;margin-top:5px;line-height:1.6}
   @media(max-width:560px){.teasers{grid-template-columns:1fr}}
 
   .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   a.card{border:1px solid var(--line);border-radius:10px;padding:18px;display:block;transition:all .2s}
-  a.card:hover{border-color:rgba(100,255,218,.45);background:rgba(100,255,218,.04)}
+  a.card:hover{border-color:rgba(var(--acc-rgb),.45);background:rgba(var(--acc-rgb),.04)}
   a.card .t{font-size:16.5px;color:var(--bright);font-weight:600;margin-top:10px}
   a.card .d{font-size:14px;margin-top:5px;line-height:1.6;color:var(--slate)}
   a.card .go{font-size:13px;color:var(--teal);margin-top:10px}
   a.card img.dthumb{width:100%;height:150px;object-fit:cover;border-radius:6px;border:1px solid var(--line);display:block}
-  a.card .monogram{height:150px;border-radius:6px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:700;color:var(--bright);background:rgba(100,255,218,.05);letter-spacing:.03em}
+  a.card .monogram{height:150px;border-radius:6px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:700;color:var(--bright);background:rgba(var(--acc-rgb),.05);letter-spacing:.03em}
   @media(max-width:560px){.cards{grid-template-columns:1fr}}
   .backlink{font-size:13.5px;color:var(--teal);display:inline-block;margin-bottom:20px}
   img.detailimg{width:100%;border:1px solid var(--line);border-radius:8px;display:block;margin:14px 0 6px}
@@ -207,6 +208,27 @@
   ul.insights li::before{content:"▸";position:absolute;left:0;color:var(--teal)}
   .linkrow{margin-top:16px;font-size:14px}
   .linkrow a{color:var(--teal);margin-right:20px}
+
+  /* ===== Beige / Grey palettes + lights switch ===== */
+  :root{
+    --bg:#f4eee0; --bg-light:#eee5cf; --bright:#38342a; --text:#5d5747; --dim:#8b8271;
+    --accent:#a05e2c; --acc-rgb:160,94,44; --card:rgba(96,82,55,.07);
+    --teal:#a05e2c; --slate:#5d5747; --line:rgba(96,82,55,.22);
+  }
+  html[data-theme="grey"]{
+    --bg:#26262a; --bg-light:#303036; --bright:#ede9de; --text:#aaa69b; --dim:#7d7a70;
+    --accent:#cdbd97; --acc-rgb:205,189,151; --card:rgba(232,226,210,.06);
+    --teal:#cdbd97; --slate:#aaa69b; --line:rgba(232,226,210,.17);
+  }
+  body{transition:background-color .35s ease,color .35s ease}
+  header.left img.photo{border:2px solid var(--line)}
+  #themeToggle{
+    position:fixed;top:16px;right:18px;z-index:60;cursor:pointer;
+    font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-size:12px;letter-spacing:.04em;
+    background:var(--bg-light);color:var(--bright);border:1px solid var(--line);
+    padding:8px 15px;border-radius:999px;transition:all .25s ease;
+  }
+  #themeToggle:hover{border-color:var(--accent);color:var(--accent)}
 </style>
 </head>
 <body>
@@ -284,5 +306,7 @@
   }, { rootMargin: '-40% 0px -55% 0px' });
   document.querySelectorAll('main section').forEach(function(s){ obs.observe(s); });
 </script>
+<button id="themeToggle" type="button" aria-label="Switch between beige and grey theme"></button>
+<script>(function(){var b=document.getElementById('themeToggle');function lab(){b.textContent=document.documentElement.dataset.theme==='grey'?'Lights: Grey — switch to Beige':'Lights: Beige — switch to Grey';}lab();b.addEventListener('click',function(){var t=document.documentElement.dataset.theme==='grey'?'beige':'grey';document.documentElement.dataset.theme=t;try{localStorage.setItem('pp-theme',t);}catch(e){}lab();});})();</script>
 </body>
 </html>
