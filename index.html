@@ -190,6 +190,28 @@
   .teasers .t{font-size:17px;color:var(--bright);font-weight:600}
   .teasers .d{font-size:14px;margin-top:5px;line-height:1.6}
   @media(max-width:560px){.teasers{grid-template-columns:1fr}}
+
+  /* artistic intro */
+  .intro-art{position:relative;padding:26px 0 6px}
+  .intro-art::before{content:"";position:absolute;top:-30px;right:-40px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(100,255,218,.13),transparent 65%);pointer-events:none}
+  .hello{font-family:var(--mono);font-size:13px;letter-spacing:.28em;color:var(--teal);text-transform:uppercase}
+  .giant{font-size:clamp(38px,5.2vw,54px);line-height:1.08;font-weight:700;color:var(--bright);letter-spacing:-.01em;margin-top:12px}
+  .aspire{font-size:clamp(19px,2.4vw,24px);line-height:1.5;color:var(--slate);margin-top:16px;max-width:34em}
+  .aspire .pm{color:var(--bright);font-weight:600;text-decoration:underline wavy var(--teal) 1.5px;text-underline-offset:6px}
+  .journey{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 6px}
+  .jstep{border-top:2px solid rgba(100,255,218,.35);padding-top:10px}
+  .jstep .n{font-family:var(--mono);font-size:12px;color:var(--teal)}
+  .jstep .r{font-size:15px;color:var(--bright);font-weight:600;margin-top:4px;line-height:1.35}
+  .jstep .s{font-size:12.5px;color:#8892b0;margin-top:3px;line-height:1.5}
+  @media(max-width:700px){.journey{grid-template-columns:1fr 1fr}}
+  .story p{font-size:17.5px;line-height:1.85;margin-top:20px;max-width:38em}
+  .pull{margin:30px 0 6px;padding:4px 0 4px 22px;border-left:3px solid var(--teal);position:relative}
+  .pull .q{font-size:21px;line-height:1.6;color:var(--bright);font-weight:500}
+  .pull .cap{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;color:var(--teal);text-transform:uppercase;margin-top:10px}
+  .roles{margin-top:30px}
+  .roles .lab{font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;color:var(--teal);text-transform:uppercase}
+  .roles .list{font-size:16.5px;line-height:2;color:var(--bright);margin-top:8px;max-width:40em}
+  .roles .list .sep{color:var(--teal);padding:0 4px}
 </style>
 </head>
 <body>
@@ -230,14 +252,33 @@
   <main>
 <section id="about" class="about">
       <h2 class="section-title">About</h2>
-      <p>Hi, I&rsquo;m Prathamesh.</p>
-      <p>I aspire to be a <strong style="color:var(--bright)">Product Manager</strong> &mdash; and my path has taken me through the operations, technology, and customer-facing sides of business.</p>
-      <p>I started as a Material Planner, supported an enterprise application used by 10,000+ people as a Technical Support Engineer, and later moved into a Business Analyst role. I then moved to the U.S. to pursue my Master&rsquo;s in Engineering Management at <a href="https://www.asu.edu/" target="_blank" rel="noopener">Arizona State University</a>.</p>
-      <p>Along the way, I explored how industries like logistics, manufacturing, retail, and finance operate &mdash; and what different roles actually involve. I also shipped an MVP with Honeywell Aerospace through its Technology Innovation Lab incubation project, while working on the front line at ASU Admission Services, speaking with 50&ndash;60 people daily about admission inquiries.</p>
-      <p>That experience gave me a ground-level view of EdTech: what breaks, how workflows really run, and how timelines affect the people relying on them.</p>
-      <p>With experience across operations, warehousing, logistics, enterprise support, business analysis, and customer service, I bring a practical, well-rounded perspective on how products are built, used, and improved.</p>
-      <p>I&rsquo;m open to roles including Product Manager, Business Analyst, Technical Support Engineer, Operations Manager, Project Manager, Project Coordinator, and Financial Analyst &mdash; areas where I&rsquo;ve already built real experience.</p>
-    
+      <div class="intro-art">
+        <div class="hello">Hi, I&rsquo;m</div>
+        <div class="giant">Prathamesh.</div>
+        <p class="aspire">I aspire to be a <span class="pm">Product Manager</span>, and my path has taken me through the operations, technology, and customer facing sides of business.</p>
+        <div class="journey">
+          <div class="jstep"><div class="n">01</div><div class="r">Material Planner</div><div class="s">Where it started, running plant operations in India</div></div>
+          <div class="jstep"><div class="n">02</div><div class="r">Technical Support</div><div class="s">An enterprise application used by 10,000+ people</div></div>
+          <div class="jstep"><div class="n">03</div><div class="r">Business Analyst</div><div class="s">Finding the patterns behind recurring problems</div></div>
+          <div class="jstep"><div class="n">04</div><div class="r">United States</div><div class="s">Master&rsquo;s in Engineering Management at ASU</div></div>
+        </div>
+        <div class="story">
+          <p>I started as a Material Planner, supported an enterprise application used by 10,000+ people as a Technical Support Engineer, and later moved into a Business Analyst role. I then moved to the U.S. to pursue my Master&rsquo;s in Engineering Management at <a href="https://www.asu.edu/" target="_blank" rel="noopener">Arizona State University</a>.</p>
+          <p>Along the way, I explored how industries like logistics, manufacturing, retail, and finance operate, and what different roles actually involve. I also shipped an MVP with Honeywell Aerospace through its Technology Innovation Lab incubation project, while working on the front line at ASU Admission Services, speaking with 50 to 60 people daily about admission inquiries.</p>
+        </div>
+        <div class="pull">
+          <div class="q">That experience gave me a ground level view of EdTech: what breaks, how workflows really run, and how timelines affect the people relying on them.</div>
+          <div class="cap">Learned on the front line</div>
+        </div>
+        <div class="story">
+          <p>With experience across operations, warehousing, logistics, enterprise support, business analysis, and customer service, I bring a practical, well rounded perspective on how products are built, used, and improved.</p>
+        </div>
+        <div class="roles">
+          <div class="lab">Open to roles like</div>
+          <div class="list">Product Manager <span class="sep">&middot;</span> Business Analyst <span class="sep">&middot;</span> Technical Support Engineer <span class="sep">&middot;</span> Operations Manager <span class="sep">&middot;</span> Project Manager <span class="sep">&middot;</span> Project Coordinator <span class="sep">&middot;</span> Financial Analyst</div>
+          <p style="font-size:15px;color:#8892b0;margin-top:10px">Areas where I have already built real experience.</p>
+        </div>
+      </div>
       <div class="stats">
         <div class="stat"><div class="n">23</div><div class="l">Total builds showcased</div></div>
         <div class="stat"><div class="n">6</div><div class="l">Work projects</div></div>
