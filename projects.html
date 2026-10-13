@@ -190,6 +190,23 @@
   .teasers .t{font-size:17px;color:var(--bright);font-weight:600}
   .teasers .d{font-size:14px;margin-top:5px;line-height:1.6}
   @media(max-width:560px){.teasers{grid-template-columns:1fr}}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  a.card{border:1px solid var(--line);border-radius:10px;padding:18px;display:block;transition:all .2s}
+  a.card:hover{border-color:rgba(100,255,218,.45);background:rgba(100,255,218,.04)}
+  a.card .t{font-size:16.5px;color:var(--bright);font-weight:600;margin-top:10px}
+  a.card .d{font-size:14px;margin-top:5px;line-height:1.6;color:var(--slate)}
+  a.card .go{font-size:13px;color:var(--teal);margin-top:10px}
+  a.card img.dthumb{width:100%;height:150px;object-fit:cover;border-radius:6px;border:1px solid var(--line);display:block}
+  a.card .monogram{height:150px;border-radius:6px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:700;color:var(--bright);background:rgba(100,255,218,.05);letter-spacing:.03em}
+  @media(max-width:560px){.cards{grid-template-columns:1fr}}
+  .backlink{font-size:13.5px;color:var(--teal);display:inline-block;margin-bottom:20px}
+  img.detailimg{width:100%;border:1px solid var(--line);border-radius:8px;display:block;margin:14px 0 6px}
+  ul.insights{list-style:none;margin-top:8px}
+  ul.insights li{font-size:15px;line-height:1.7;margin-bottom:12px;padding-left:18px;position:relative}
+  ul.insights li::before{content:"▸";position:absolute;left:0;color:var(--teal)}
+  .linkrow{margin-top:16px;font-size:14px}
+  .linkrow a{color:var(--teal);margin-right:20px}
 </style>
 </head>
 <body>
@@ -230,171 +247,35 @@
   <main>
     <div class="subnav"><a href="#projects">Work Projects</a><a href="#data-projects">Data Projects</a></div>
 
-<section id="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="group">
-
-        <div class="item proj">
-          <div class="thumb"><span class="mono">FC</span><span class="cap">FieldCore</span></div>
-          <div>
-            <h3>Turning Repeat Tickets Into Automation <span class="arrow">&#8599;</span></h3>
-            <p>L2 support for GE FieldCore at TCS, where bad data stopped field work. <strong style="color:var(--bright)">Result: ticket flow dropped by around 30% during peak support time.</strong></p>
-            <details>
-              <summary>Read the case study</summary>
-              <div class="case">
-                <p><span class="label">Problem.</span> The same manual fixes kept coming back as new tickets &mdash; 7 to 15 a day in ServiceNow, across events, purchase orders, scope, and resource allocation.</p>
-                <p><span class="label">What I did.</span> Talked directly with field technicians to understand what they were trying to do, not just what the error said. Fixed bad data with SQL, read AWS CloudWatch logs and REST API payloads to find where things broke, and used Postman to trigger the microservices myself and confirm data moved correctly. Worked with Finance and Contracts so numbers stayed consistent across systems.</p>
-                <p><span class="label">What changed.</span> I documented the recurring issues on Confluence and sorted them into four types &mdash; Data Fix, Integration Issue, Manual Fix, Contract Change &mdash; presented the pattern in weekly status meetings with GE stakeholders, and pushed the dev team to automate the processes behind the repeat tickets. I also helped validate the SAP-to-Oracle data migration for the MENA region.</p>
-              </div>
-            </details>
-            <ul class="tags"><li>ServiceNow</li><li>SQL</li><li>AWS CloudWatch</li><li>Postman</li></ul>
-          </div>
-        </div>
-
-        <div class="item proj">
-          <div class="thumb"><span class="mono">SA</span><span class="cap">SAMS</span></div>
-          <div>
-            <h3>Smart Accessible Management System <span class="arrow">&#8599;</span></h3>
-            <p>An AI-assisted platform to make air travel easier for passengers who need accessibility support, taken from discovery to prototype at the ASU Honeywell Tech Innovation Lab. <strong style="color:var(--bright)">Result: a 12-screen prototype and a requirements package that kept 23+ stakeholders aligned through sign-off.</strong></p>
-            <details>
-              <summary>Read the case study</summary>
-              <div class="case">
-                <p><span class="label">Problem.</span> Airport accessibility services are fragmented &mdash; passengers, airlines, and airport teams each see only part of the journey, so requests fall through the gaps.</p>
-                <p><span class="label">What I did.</span> Interviewed 23+ stakeholders across 4 airport departments, sized the market at a $100M TAM, and built a 12-screen Figma prototype. Stress-tested go-to-market assumptions with a Business Model Canvas and tracked 6 review checkpoints in a requirements traceability log.</p>
-                <p><span class="label">What changed.</span> Each feedback round refreshed the competitive positioning and kept all stakeholders aligned from discovery through final sign-off. The model projected a 40% reduction in service complaints if built.</p>
-                <div class="gallery">
-                <figure><a href="files/honeywell/honeywell-cohort.jpg" target="_blank" rel="noopener"><img src="files/honeywell/honeywell-cohort.jpg" alt="Prathamesh Patil with the Technology Innovation Lab cohort at ASU"></a><figcaption>Lab cohort — Honeywell Aerospace × ASU</figcaption></figure>
-                <figure><a href="files/honeywell/honeywell-workshop.jpg" target="_blank" rel="noopener"><img src="files/honeywell/honeywell-workshop.jpg" alt="Team working session with journey maps and research sketches"></a><figcaption>Discovery workshop — journey mapping</figcaption></figure>
-                <figure><a href="files/honeywell/honeywell-team-mentor.jpg" target="_blank" rel="noopener"><img src="files/honeywell/honeywell-team-mentor.jpg" alt="Team with program mentor at the Innovation Lab"></a><figcaption>Team with our program mentor</figcaption></figure>
-                <figure><a href="files/honeywell/honeywell-certificate.jpg" target="_blank" rel="noopener"><img src="files/honeywell/honeywell-certificate.jpg" alt="Honeywell and ASU Certificate of Completion for the Technology Innovation Lab, April 25, 2025"></a><figcaption>Certificate of Completion — Apr 25, 2025</figcaption></figure>
-              </div>
-              </div>
-            </details>
-            <ul class="tags"><li>Figma</li><li>Traceability</li><li>Market Sizing</li><li>GTM</li></ul>
-            
-          </div>
-        </div>
-
-        <div class="item proj">
-          <div class="thumb"><span class="mono">SI</span><span class="cap">Savli</span></div>
-          <div>
-            <h3>Fleet &amp; Inventory Optimization <span class="arrow">&#8599;</span></h3>
-            <p>Quarry-to-delivery operations at Savli Infra. <strong style="color:var(--bright)">Result: logistics costs cut 15% ($10K/year), profit up $30K/year, 181 tons/day held with zero missed deadlines for 17 months.</strong></p>
-            <details>
-              <summary>Read the case study</summary>
-              <div class="case">
-                <p><span class="label">Problem.</span> Delivery costs were eating margin, and manual tracking created material discrepancies and handover disputes.</p>
-                <p><span class="label">What I did.</span> Analyzed fleet capacity in Excel and found the owned fleet running at 40% utilization. Modeled ordering with EOQ, digitized inventory and workflow tracking, and standardized daily reporting and shift handover.</p>
-                <p><span class="label">What changed.</span> Switching delivery to a third-party provider cut logistics costs by 15% and delivery time by a day. Output held steady at 181 tons/day, and cleaner tracking removed the manual gaps behind discrepancy disputes.</p>
-              </div>
-            </details>
-            <ul class="tags"><li>Excel</li><li>EOQ</li><li>Inventory</li><li>Operations</li></ul>
-          </div>
-        </div>
-
-        <div class="item proj">
-          <div class="thumb"><span class="mono">DW</span><span class="cap">Warehouse</span></div>
-          <div>
-            <h3>E-commerce Data Warehouse &amp; Power BI <span class="arrow">&#8599;</span></h3>
-            <p>A working data warehouse built end to end &mdash; raw sales data in, a clean star schema and dashboard out. <strong style="color:var(--bright)">Result: 608 raw rows cleaned to 558 loaded rows, with DAX reporting on top.</strong></p>
-            <details>
-              <summary>Read the case study</summary>
-              <div class="case">
-                <p><span class="label">Problem.</span> Raw e-commerce sales data was messy &mdash; duplicates, nulls, and inconsistent country and category values that made reporting unreliable.</p>
-                <p><span class="label">What I did.</span> Built an ETL process that removed duplicates and null rows and standardized variants, designed a star schema, and handled slowly changing dimensions. Wrote the SQL, then built DAX measures and a Power BI dashboard.</p>
-                <p><span class="label">What changed.</span> One consistent source of truth for sales reporting, with a schema diagram and documented transformations anyone can follow.</p>
-              </div>
-            </details>
-            <ul class="tags"><li>SQL</li><li>Power BI</li><li>DAX</li><li>Star Schema</li></ul>
-          </div>
-        </div>
-
-        <div class="item proj">
-          <div class="thumb"><span class="mono">AI</span><span class="cap">BA Study</span></div>
-          <div>
-            <h3>AI Assistant &mdash; A Business Analyst Case Study <span class="arrow">&#8599;</span></h3>
-            <p>A full BA workup for an AI assistant across email, chat, and project tools &mdash; shown as analysis, not a product pitch. <strong style="color:var(--bright)">Result: a complete, traceable requirements package a dev team could build from.</strong></p>
-            <details>
-              <summary>Read the case study</summary>
-              <div class="case">
-                <p><span class="label">Problem.</span> &ldquo;Add an AI assistant&rdquo; is a wish, not a requirement. Without analysis it becomes a feature list nobody can scope or test.</p>
-                <p><span class="label">What I did.</span> Ran elicitation, mapped as-is and to-be states, and did a gap analysis. Built a stakeholder map, wrote user stories with acceptance criteria, and connected every requirement in a traceability matrix. Scoped with MoSCoW and documented assumptions, constraints, dependencies, and risks.</p>
-                <p><span class="label">What changed.</span> The idea became a decision-ready case study showing the BA craft end to end &mdash; problem, evidence, scope, and a buildable backlog.</p>
-              </div>
-            </details>
-            <ul class="tags"><li>Elicitation</li><li>User Stories</li><li>Traceability</li><li>MoSCoW</li></ul>
-          </div>
-        </div>
-
-        <div class="item proj">
-          <div class="thumb"><span class="mono">SQL</span><span class="cap">In Progress</span></div>
-          <div>
-            <h3>SQL Portfolio &mdash; 15 Business Questions <span class="arrow">&#8599;</span></h3>
-            <p>Fifteen real business questions answered with SQL &mdash; joins, aggregations, CTEs, and window functions &mdash; each explained in plain English. Built over a 40-day sprint, 90 minutes a day; completes November 15, 2026.</p>
-            <ul class="tags"><li>SQL</li><li>Window Functions</li><li>CTEs</li><li>GitHub</li></ul>
-          </div>
-        </div>
-
-      </div>
-
-      <div style="margin-top:36px">
-        <div class="more-item"><span class="t">Day Planner Agent</span> &mdash; an n8n workflow that reads my calendar each morning, drafts a day plan with an AI model, and sends it to Telegram.</div>
-        <div class="more-item"><span class="t">Workflow Improvement, ASU Admissions</span> &mdash; documented 4 workflows and 6 recurring failure patterns from case data in PeopleSoft and Salesforce, and co-authored the SOPs that fixed them.</div>
-        <div class="more-item"><span class="t">Markstrat Strategy Simulation</span> &mdash; multi-round brand and pricing strategy under constrained resources, using perceptual mapping and segmentation.</div>
+    <section id="projects">
+      <h2 class="sec-title">Work Projects</h2>
+      <div class="cards">
+        <a class="card" href="fieldcore-repeat-tickets.html"><div class="monogram">FC</div><div class="t">Turning Repeat Tickets Into Automation</div><div class="d">L2 support for GE FieldCore at TCS, where bad data stopped field work. Result: ticket flow dropped by around 30% during peak support time.…</div><div class="go">View project &#8594;</div></a>
+        <a class="card" href="sams-honeywell.html"><div class="monogram">SA</div><div class="t">Smart Accessible Management System</div><div class="d">An AI-assisted platform to make air travel easier for passengers who need accessibility support, taken from discovery to prototype at the ASU Honeywel…</div><div class="go">View project &#8594;</div></a>
+        <a class="card" href="savli-fleet-inventory.html"><div class="monogram">SI</div><div class="t">Fleet & Inventory Optimization</div><div class="d">Quarry-to-delivery operations at Savli Infra. Result: logistics costs cut 15% ($10K/year), profit up $30K/year, 181 tons/day held with zero missed dea…</div><div class="go">View project &#8594;</div></a>
+        <a class="card" href="ecommerce-data-warehouse.html"><div class="monogram">DW</div><div class="t">E-commerce Data Warehouse & Power BI</div><div class="d">A working data warehouse built end to end — raw sales data in, a clean star schema and dashboard out. Result: 608 raw rows cleaned to 558 loaded rows,…</div><div class="go">View project &#8594;</div></a>
+        <a class="card" href="ai-assistant-ba-study.html"><div class="monogram">AI</div><div class="t">AI Assistant — A Business Analyst Case Study</div><div class="d">A full BA workup for an AI assistant across email, chat, and project tools — shown as analysis, not a product pitch. Result: a complete, traceable req…</div><div class="go">View project &#8594;</div></a>
+        <a class="card" href="sql-portfolio.html"><div class="monogram">SQL</div><div class="t">SQL Portfolio — 15 Business Questions</div><div class="d">Fifteen real business questions answered with SQL — joins, aggregations, CTEs, and window functions — each explained in plain English. Built over a 40…</div><div class="go">View project &#8594;</div></a>
       </div>
     </section>
 
-    
-<section id="data-projects">
+    <section id="data-projects">
       <h2 class="sec-title">Data Projects</h2>
-      <p style="font-size:15.5px;margin-bottom:10px">Five end-to-end ETL projects — real code, real runs, dashboards, and written insights. Every number below comes from actually running the pipeline.</p>
-      <article class="dp">
-        <h3>Retail Sales ETL & Dashboard</h3>
-        <img class="dash" src="files/dashboards/retail-sales-etl-dashboard.png" alt="Retail Sales ETL & Dashboard dashboard">
-        <p>End-to-end pipeline on 9,994 real retail orders (Sample Superstore): cleaned in pandas, loaded into a SQLite star schema (fact + 4 dimensions), analyzed with SQL, charted in a 4-panel dashboard.</p>
-        <p><strong>Key insight:</strong> Furniture is #2 in sales ($742K) but keeps only a 2.49% margin vs Technology's 17.40% — and any discount over 20% loses money per order line.</p>
-        <div class="links"><a href="https://github.com/Ppatil63/data-projects/tree/main/retail-sales-etl-dashboard" target="_blank" rel="noopener">View code ↗</a><a href="https://github.com/Ppatil63/data-projects/blob/main/retail-sales-etl-dashboard/INSIGHTS.md" target="_blank" rel="noopener">Read all insights ↗</a></div>
-        <ul class="tags"><li>Python · pandas</li><li>SQLite star schema</li><li>SQL</li><li>matplotlib</li></ul>
-      </article>
-      <article class="dp">
-        <h3>Support Ticket SLA Analytics</h3>
-        <img class="dash" src="files/dashboards/support-ticket-sla-etl.png" alt="Support Ticket SLA Analytics dashboard">
-        <p>Ticket pipeline scoring SLA performance by priority, category, and team — breach rates, resolution times, reopen rate, and backlog aging. Built on seeded sample data, labelled as such.</p>
-        <p><strong>Key insight:</strong> 27% of resolved tickets breached SLA, driven by Software Bug (70.7%) and Integration/API (69.9%) tickets; 86.8% of the open backlog was already 15+ days old.</p>
-        <div class="links"><a href="https://github.com/Ppatil63/data-projects/tree/main/support-ticket-sla-etl" target="_blank" rel="noopener">View code ↗</a><a href="https://github.com/Ppatil63/data-projects/blob/main/support-ticket-sla-etl/INSIGHTS.md" target="_blank" rel="noopener">Read all insights ↗</a></div>
-        <ul class="tags"><li>Python</li><li>SQLite</li><li>SQL</li><li>SLA analysis</li></ul>
-      </article>
-      <article class="dp">
-        <h3>HR Attrition ETL & Dashboard</h3>
-        <img class="dash" src="files/dashboards/hr-attrition-etl-dashboard.png" alt="HR Attrition ETL & Dashboard dashboard">
-        <p>IBM's real workforce dataset (1,470 employees) through a full ETL into SQLite, with attrition analysis by department, overtime, tenure, and income band.</p>
-        <p><strong>Key insight:</strong> Employees who work overtime leave at 30.5% vs 10.4% for everyone else; Sales Representatives are the highest-risk role at 39.8% attrition.</p>
-        <div class="links"><a href="https://github.com/Ppatil63/data-projects/tree/main/hr-attrition-etl-dashboard" target="_blank" rel="noopener">View code ↗</a><a href="https://github.com/Ppatil63/data-projects/blob/main/hr-attrition-etl-dashboard/INSIGHTS.md" target="_blank" rel="noopener">Read all insights ↗</a></div>
-        <ul class="tags"><li>Python · pandas</li><li>SQLite</li><li>SQL</li><li>matplotlib</li></ul>
-      </article>
-      <article class="dp">
-        <h3>Stock Market ETL — 5 Tickers, 5 Years</h3>
-        <img class="dash" src="files/dashboards/stock-market-etl.png" alt="Stock Market ETL — 5 Tickers, 5 Years dashboard">
-        <p>Daily price pipeline for AAPL, MSFT, AMZN, NVDA, and GOOG (6,270 rows): normalized into one warehouse table, with SQL window functions for 30/90-day moving averages, daily returns, and volatility.</p>
-        <p><strong>Key insight:</strong> NVDA returned +951% over five years with the highest volatility (51.9% annualized); in the last year GOOG (+42.9%) and AAPL (+37.8%) led while MSFT added only +5.7%.</p>
-        <div class="links"><a href="https://github.com/Ppatil63/data-projects/tree/main/stock-market-etl" target="_blank" rel="noopener">View code ↗</a><a href="https://github.com/Ppatil63/data-projects/blob/main/stock-market-etl/INSIGHTS.md" target="_blank" rel="noopener">Read all insights ↗</a></div>
-        <ul class="tags"><li>Python</li><li>SQLite</li><li>SQL window functions</li><li>matplotlib</li></ul>
-      </article>
-      <article class="dp">
-        <h3>Logistics Delivery Performance ETL</h3>
-        <img class="dash" src="files/dashboards/logistics-delivery-etl.png" alt="Logistics Delivery Performance ETL dashboard">
-        <p>Shipment pipeline (2,500 sample shipments, labelled) analyzing on-time performance, carrier cost vs reliability, and the cost of late deliveries across zones.</p>
-        <p><strong>Key insight:</strong> The cheapest carrier ($1.81/kg) is on-time only 42.9% of the time vs 85.4% for the most reliable — and late shipments consume 24.6% of total delivery spend.</p>
-        <div class="links"><a href="https://github.com/Ppatil63/data-projects/tree/main/logistics-delivery-etl" target="_blank" rel="noopener">View code ↗</a><a href="https://github.com/Ppatil63/data-projects/blob/main/logistics-delivery-etl/INSIGHTS.md" target="_blank" rel="noopener">Read all insights ↗</a></div>
-        <ul class="tags"><li>Python · pandas</li><li>SQLite</li><li>SQL</li><li>matplotlib</li></ul>
-      </article>
+      <p style="font-size:15.5px;margin-bottom:16px">Five end-to-end ETL projects with live code. Click any project for its visualisation, insights, and GitHub code.</p>
+      <div class="cards">
+        <a class="card" href="retail-sales-etl-dashboard.html"><img class="dthumb" src="files/dashboards/retail-sales-etl-dashboard.png" alt="Retail Sales ETL & Dashboard dashboard"><div class="t">Retail Sales ETL & Dashboard</div><div class="d">End-to-end pipeline on 9,994 real retail orders (Sample Superstore): cleaned in pandas, loaded into a SQLite star schema (fact + 4 dimensions), analyz…</div><div class="go">View project &#8594;</div></a>
+        <a class="card" href="support-ticket-sla-etl.html"><img class="dthumb" src="files/dashboards/support-ticket-sla-etl.png" alt="Support Ticket SLA Analytics dashboard"><div class="t">Support Ticket SLA Analytics</div><div class="d">Ticket pipeline scoring SLA performance by priority, category, and team — breach rates, resolution times, reopen rate, and backlog aging. Built on see…</div><div class="go">View project &#8594;</div></a>
+        <a class="card" href="hr-attrition-etl-dashboard.html"><img class="dthumb" src="files/dashboards/hr-attrition-etl-dashboard.png" alt="HR Attrition ETL & Dashboard dashboard"><div class="t">HR Attrition ETL & Dashboard</div><div class="d">IBM's real workforce dataset (1,470 employees) through a full ETL into SQLite, with attrition analysis by department, overtime, tenure, and income ban…</div><div class="go">View project &#8594;</div></a>
+        <a class="card" href="stock-market-etl.html"><img class="dthumb" src="files/dashboards/stock-market-etl.png" alt="Stock Market ETL — 5 Tickers, 5 Years dashboard"><div class="t">Stock Market ETL — 5 Tickers, 5 Years</div><div class="d">Daily price pipeline for AAPL, MSFT, AMZN, NVDA, and GOOG (6,270 rows): normalized into one warehouse table, with SQL window functions for 30/90-day m…</div><div class="go">View project &#8594;</div></a>
+        <a class="card" href="logistics-delivery-etl.html"><img class="dthumb" src="files/dashboards/logistics-delivery-etl.png" alt="Logistics Delivery Performance ETL dashboard"><div class="t">Logistics Delivery Performance ETL</div><div class="d">Shipment pipeline (2,500 sample shipments, labelled) analyzing on-time performance, carrier cost vs reliability, and the cost of late deliveries acros…</div><div class="go">View project &#8594;</div></a>
+      </div>
     </section>
 
-    
     <footer>
       <p>Prathamesh Vijay Patil &middot; Phoenix, AZ. Design inspired by the classic two-column portfolio layout. Built with plain HTML &amp; CSS and hosted on GitHub Pages.</p>
     </footer>
-    </main>
+      </main>
+</main>
 </main>
 </div>
 
