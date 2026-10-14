@@ -235,6 +235,9 @@
   .problem-callout{background:rgba(var(--acc-rgb),.09);border:1px solid rgba(var(--acc-rgb),.28);border-left:4px solid var(--accent);border-radius:10px;padding:18px 22px;margin:20px 0 8px}
   .problem-callout .pc-label{display:block;font-family:'SF Mono','Fira Code',ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
   .problem-callout p{font-family:'Fraunces',Georgia,'Times New Roman',serif;font-style:italic;font-size:19.5px;line-height:1.55;color:var(--bright);margin:0}
+
+  .sources{border:1px solid var(--line);border-radius:10px;padding:15px 19px;margin:22px 0 6px;font-size:14px;line-height:1.65}
+  .sources .k{display:block;font-family:'SF Mono','Fira Code',ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
 </style>
 </head>
 <body>
@@ -278,7 +281,6 @@
       <h2 class="sec-title" style="text-transform:none;letter-spacing:0;font-size:26px;color:var(--bright)">Retail Sales ETL & Dashboard</h2>
       <p style="font-size:16px;line-height:1.75">End-to-end pipeline on 9,994 real retail orders (Sample Superstore): cleaned in pandas, loaded into a SQLite star schema (fact + 4 dimensions), analyzed with SQL, charted in a 4-panel dashboard.</p>
       <div class="problem-callout"><span class="pc-label">The problem</span><p>A retail chain can grow sales every year and still leak profit, through the wrong discounts, the wrong products, and the wrong regions. The problem: find exactly where the money leaks.</p></div>
-      <img class="detailimg" src="files/dashboards/retail-sales-etl-dashboard.png" alt="Retail Sales ETL & Dashboard dashboard visualisation">
       <div class="grouplab">Key insights — from the actual run</div>
       <ul class="insights">
         <li><strong>The business is healthy overall, but barely:</strong> $2,297,200.86 in sales produced $286,397.02 in profit — a 12.47% margin across four years.</li>
@@ -288,12 +290,15 @@
         <li><strong>Growth is real and accelerating.</strong> Sales rose from $484,247.50 in 2014 to $733,215.26 in 2017 (+51%), and profit rose every year ($49,543.97 → $93,439.27). The single biggest month was November 2017 at $118,447.83 — a clear holiday-season peak.</li>
         <li><strong>A few products dominate both ends.</strong> The Canon imageCLASS 2200 copier alone contributed $25,199.93 profit. At the other end, the Cubify CubeX 3D Printer (Double Head) lost $8,879.97 and the Lexmark MX611dhe lost $4,589.97 — candidates for repricing or delisting.</li>
       </ul>
+      <div class="grouplab">The dashboard — the solution, visualised</div>
+      <img class="detailimg" src="files/dashboards/retail-sales-etl-dashboard.png" alt="Retail Sales ETL & Dashboard dashboard visualisation">
       <div class="linkrow">
         <a href="https://github.com/Ppatil63/data-projects/tree/main/retail-sales-etl-dashboard" target="_blank" rel="noopener">View code on GitHub &#8599;</a>
         <a href="https://github.com/Ppatil63/data-projects/blob/main/retail-sales-etl-dashboard/analysis.sql" target="_blank" rel="noopener">SQL queries &#8599;</a>
         <a href="https://github.com/Ppatil63/data-projects/blob/main/retail-sales-etl-dashboard/INSIGHTS.md" target="_blank" rel="noopener">Full insights &#8599;</a>
         <a href="https://github.com/Ppatil63/data-projects/blob/main/retail-sales-etl-dashboard/README.md" target="_blank" rel="noopener">README &#8599;</a>
       </div>
+      <div class="sources"><span class="k">Sources &amp; verification</span>Dataset: Sample Superstore, Tableau&rsquo;s public sample retail dataset (9,994 order lines). Every figure on this page is computed by the project code (etl.py + analysis.sql) from the actual dataset; the code, the SQLite database, and the run outputs are in the GitHub repo linked below.</div>
       <ul class="tags"><li>Python · pandas</li><li>SQLite star schema</li><li>SQL</li><li>matplotlib</li></ul>
     </section>
   </main>
