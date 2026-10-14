@@ -235,6 +235,9 @@
   .problem-callout{background:rgba(var(--acc-rgb),.09);border:1px solid rgba(var(--acc-rgb),.28);border-left:4px solid var(--accent);border-radius:10px;padding:18px 22px;margin:20px 0 8px}
   .problem-callout .pc-label{display:block;font-family:'SF Mono','Fira Code',ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
   .problem-callout p{font-family:'Fraunces',Georgia,'Times New Roman',serif;font-style:italic;font-size:19.5px;line-height:1.55;color:var(--bright);margin:0}
+
+  .sources{border:1px solid var(--line);border-radius:10px;padding:15px 19px;margin:22px 0 6px;font-size:14px;line-height:1.65}
+  .sources .k{display:block;font-family:'SF Mono','Fira Code',ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
 </style>
 </head>
 <body>
@@ -278,7 +281,6 @@
       <h2 class="sec-title" style="text-transform:none;letter-spacing:0;font-size:26px;color:var(--bright)">HR Attrition ETL & Dashboard</h2>
       <p style="font-size:16px;line-height:1.75">IBM's real workforce dataset (1,470 employees) through a full ETL into SQLite, with attrition analysis by department, overtime, tenure, and income band.</p>
       <div class="problem-callout"><span class="pc-label">The problem</span><p>The company loses about one in six employees, but attrition is not spread evenly. It concentrates in specific roles, age bands, and one working pattern. The problem: pinpoint exactly where people leave, and what drives it.</p></div>
-      <img class="detailimg" src="files/dashboards/hr-attrition-etl-dashboard.png" alt="HR Attrition ETL & Dashboard dashboard visualisation">
       <div class="grouplab">Key insights — from the actual run</div>
       <ul class="insights">
         <li><strong>Overall attrition is 16.12%</strong> — 237 of 1,470 employees left. That's the baseline every segment below is compared against.</li>
@@ -289,12 +291,15 @@
         <li><strong>One role is an outlier:</strong> Sales Representatives left at 39.8% — almost 2.5× the company rate and the highest of all 9 roles — while Research Directors left at only 2.5% and Managers at 4.9%.</li>
         <li><strong>Satisfaction tracks attrition but weakly:</strong> employees with the lowest job satisfaction (1 of 4) left at 22.8% versus 11.3% at the highest level. It matters, but overtime and pay separate leavers more sharply.</li>
       </ul>
+      <div class="grouplab">The dashboard — the solution, visualised</div>
+      <img class="detailimg" src="files/dashboards/hr-attrition-etl-dashboard.png" alt="HR Attrition ETL & Dashboard dashboard visualisation">
       <div class="linkrow">
         <a href="https://github.com/Ppatil63/data-projects/tree/main/hr-attrition-etl-dashboard" target="_blank" rel="noopener">View code on GitHub &#8599;</a>
         <a href="https://github.com/Ppatil63/data-projects/blob/main/hr-attrition-etl-dashboard/analysis.sql" target="_blank" rel="noopener">SQL queries &#8599;</a>
         <a href="https://github.com/Ppatil63/data-projects/blob/main/hr-attrition-etl-dashboard/INSIGHTS.md" target="_blank" rel="noopener">Full insights &#8599;</a>
         <a href="https://github.com/Ppatil63/data-projects/blob/main/hr-attrition-etl-dashboard/README.md" target="_blank" rel="noopener">README &#8599;</a>
       </div>
+      <div class="sources"><span class="k">Sources &amp; verification</span>Dataset: IBM HR Analytics Employee Attrition &amp; Performance, the public dataset of 1,470 employees. Every figure is computed by etl.py + analysis.sql from the actual data; code, database, and outputs are on GitHub below.</div>
       <ul class="tags"><li>Python · pandas</li><li>SQLite</li><li>SQL</li><li>matplotlib</li></ul>
     </section>
   </main>
