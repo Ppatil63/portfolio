@@ -235,6 +235,9 @@
   .problem-callout{background:rgba(var(--acc-rgb),.09);border:1px solid rgba(var(--acc-rgb),.28);border-left:4px solid var(--accent);border-radius:10px;padding:18px 22px;margin:20px 0 8px}
   .problem-callout .pc-label{display:block;font-family:'SF Mono','Fira Code',ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
   .problem-callout p{font-family:'Fraunces',Georgia,'Times New Roman',serif;font-style:italic;font-size:19.5px;line-height:1.55;color:var(--bright);margin:0}
+
+  .sources{border:1px solid var(--line);border-radius:10px;padding:15px 19px;margin:22px 0 6px;font-size:14px;line-height:1.65}
+  .sources .k{display:block;font-family:'SF Mono','Fira Code',ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
 </style>
 </head>
 <body>
@@ -278,7 +281,6 @@
       <h2 class="sec-title" style="text-transform:none;letter-spacing:0;font-size:26px;color:var(--bright)">Stock Market ETL — 5 Tickers, 5 Years</h2>
       <p style="font-size:16px;line-height:1.75">Daily price pipeline for AAPL, MSFT, AMZN, NVDA, and GOOG (6,270 rows): normalized into one warehouse table, with SQL window functions for 30/90-day moving averages, daily returns, and volatility.</p>
       <div class="problem-callout"><span class="pc-label">The problem</span><p>Five big tech and chip stocks and five years of daily prices answer nothing by themselves. The problem: turn 6,270 rows of raw price history into comparable return, risk, and trend.</p></div>
-      <img class="detailimg" src="files/dashboards/stock-market-etl.png" alt="Stock Market ETL — 5 Tickers, 5 Years dashboard visualisation">
       <div class="grouplab">Key insights — from the actual run</div>
       <ul class="insights">
         <li><strong>NVIDIA ran away with the period.</strong> NVDA rose from $21.75 to $228.52 — a <strong>+950.86%</strong> total return, roughly 6× the next best performer. The other four are not close: GOOG +147.16%, AAPL +137.39%, MSFT +79.50%, AMZN +56.72%.</li>
@@ -287,12 +289,15 @@
         <li><strong>Amazon is the quiet laggard with a temper.</strong> AMZN has the weakest 5-year return (+56.72%) but the second-highest volatility (36.53%) and a −14.05% worst day — more risk than MSFT/AAPL for less return over this window.</li>
         <li><strong>Latest closes (Oct 13, 2026):</strong> MSFT $543.45, GOOG $349.52, AAPL $341.27, AMZN $258.58, NVDA $228.52 — absolute price levels say nothing about performance, which is why the dashboard indexes every series to 100 at the start date.</li>
       </ul>
+      <div class="grouplab">The dashboard — the solution, visualised</div>
+      <img class="detailimg" src="files/dashboards/stock-market-etl.png" alt="Stock Market ETL — 5 Tickers, 5 Years dashboard visualisation">
       <div class="linkrow">
         <a href="https://github.com/Ppatil63/data-projects/tree/main/stock-market-etl" target="_blank" rel="noopener">View code on GitHub &#8599;</a>
         <a href="https://github.com/Ppatil63/data-projects/blob/main/stock-market-etl/analysis.sql" target="_blank" rel="noopener">SQL queries &#8599;</a>
         <a href="https://github.com/Ppatil63/data-projects/blob/main/stock-market-etl/INSIGHTS.md" target="_blank" rel="noopener">Full insights &#8599;</a>
         <a href="https://github.com/Ppatil63/data-projects/blob/main/stock-market-etl/README.md" target="_blank" rel="noopener">README &#8599;</a>
       </div>
+      <div class="sources"><span class="k">Sources &amp; verification</span>Dataset: daily prices for AAPL, MSFT, NVDA, AMZN, and GOOGL from Yahoo Finance, Oct 14, 2021 to Oct 13, 2026 (1,254 trading days per ticker). Every figure is computed by etl.py from the downloaded data; code and outputs are on GitHub below.</div>
       <ul class="tags"><li>Python</li><li>SQLite</li><li>SQL window functions</li><li>matplotlib</li></ul>
     </section>
   </main>
