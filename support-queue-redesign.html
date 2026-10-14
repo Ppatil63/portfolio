@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Support Operations Queue Redesign — Case Study · Prathamesh Vijay Patil</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
 <meta name="description" content="Prathamesh Vijay Patil is a Technical Support Engineer and Business Analyst in Phoenix, AZ. L2 application support for GE FieldCore's 10,000+ user platform at TCS — SQL data fixes, AWS CloudWatch, REST APIs, ServiceNow. Operations and material planning at Savli Infra. MS Engineering Management, Arizona State University. Open to full-time roles anywhere in the US, any shift.">
 <meta name="keywords" content="Prathamesh Patil, Prathamesh Vijay Patil, Technical Support Engineer Phoenix, Application Support Engineer, Business Analyst Phoenix, L2 Support Engineer, SQL, ServiceNow, AWS CloudWatch, Customer Success Engineer, Operations Analyst, Material Planner, Arizona State University">
 <meta name="author" content="Prathamesh Vijay Patil">
@@ -231,6 +232,11 @@
     padding:8px 15px;border-radius:999px;transition:all .25s ease;
   }
   #themeToggle:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* Problem statement callout — grabs the eye at a glance */
+  .problem-callout{background:rgba(var(--acc-rgb),.09);border:1px solid rgba(var(--acc-rgb),.28);border-left:4px solid var(--accent);border-radius:10px;padding:18px 22px;margin:20px 0 8px}
+  .problem-callout .pc-label{display:block;font-family:'SF Mono','Fira Code',ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+  .problem-callout p{font-family:'Fraunces',Georgia,'Times New Roman',serif;font-style:italic;font-size:19.5px;line-height:1.55;color:var(--bright);margin:0}
 </style>
 </head>
 <body>
@@ -272,7 +278,7 @@
     <a class="backlink" href="case-studies.html">&#8592; All case studies</a>
     <section>
       <h2 class="sec-title" style="text-transform:none;letter-spacing:0;font-size:26px;color:var(--bright)">Support Operations Queue Redesign</h2>
-      <p style="font-size:16px;line-height:1.75">28% of first responses breach SLA, the backlog is 1,900 tickets, and 24% of contacts are repeats (scenario baseline).</p>
+      <div class="problem-callout"><span class="pc-label">The problem</span><p>28% of first responses breach SLA, the backlog is 1,900 tickets, and 24% of contacts are repeats (scenario baseline).</p></div>
       <p style="font-size:15.5px;line-height:1.75;margin-top:14px"><strong style="color:var(--bright)">What the analysis found:</strong> All tickets enter one queue regardless of type, how-to and status questions consume agent time, and recurring issues are closed ticket-by-ticket instead of fixed once.</p>
       <p style="font-size:15.5px;line-height:1.75;margin-top:12px"><strong style="color:var(--bright)">The fix:</strong> Tiered triage with skill-based routing, deflection of how-to/status volume to self-serve, and a problem-management loop that kills repeat issues at the root.</p>
       <div class="csmeta"><p><span class="k">Phase:</span> Operations · Support & Service Ops</p><p><span class="k">What I learnt:</span> Backlogs are a routing and repeat-contact problem before they are a staffing problem: 24% repeat contacts meant the queue was refilling itself.</p><p><span class="k">Tools &amp; tech stack:</span> Tiered triage & skill-based routing · SLA design · deflection/self-serve analysis · ITIL problem management</p><p><span class="k">What makes it different:</span> Attacks repeat issues with a problem-management loop — closing the root cause, not just answering tickets faster.</p></div>
