@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('pp-theme')||'beige';}catch(e){document.documentElement.dataset.theme='beige';}})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Assistant — A Business Analyst Case Study — Prathamesh Vijay Patil</title>
@@ -214,9 +215,21 @@
     --accent:#a05e2c; --acc-rgb:160,94,44; --card:rgba(96,82,55,.07);
     --teal:#a05e2c; --slate:#5d5747; --line:rgba(96,82,55,.22);
   }
-    body{transition:background-color .35s ease,color .35s ease}
+  html[data-theme="grey"]{
+    --bg:#26262a; --bg-light:#303036; --bright:#ede9de; --text:#aaa69b; --dim:#7d7a70;
+    --accent:#cdbd97; --acc-rgb:205,189,151; --card:rgba(232,226,210,.06);
+    --teal:#cdbd97; --slate:#aaa69b; --line:rgba(232,226,210,.17);
+  }
+  body{transition:background-color .35s ease,color .35s ease}
   header.left img.photo{border:2px solid var(--line)}
-    </style>
+  #themeToggle{
+    position:fixed;top:16px;right:18px;z-index:60;cursor:pointer;
+    font-family:'SF Mono','Fira Code',ui-monospace,monospace;font-size:12px;letter-spacing:.04em;
+    background:var(--bg-light);color:var(--bright);border:1px solid var(--line);
+    padding:8px 15px;border-radius:999px;transition:all .25s ease;
+  }
+  #themeToggle:hover{border-color:var(--accent);color:var(--accent)}
+</style>
 </head>
 <body>
 <div class="spotlight" id="spotlight"></div>
@@ -293,5 +306,7 @@
   }, { rootMargin: '-40% 0px -55% 0px' });
   document.querySelectorAll('main section').forEach(function(s){ obs.observe(s); });
 </script>
+<button id="themeToggle" type="button" aria-label="Switch between beige and grey theme"></button>
+<script>(function(){var b=document.getElementById('themeToggle');function lab(){b.textContent=document.documentElement.dataset.theme==='grey'?'Lights: Grey — switch to Beige':'Lights: Beige — switch to Grey';}lab();b.addEventListener('click',function(){var t=document.documentElement.dataset.theme==='grey'?'beige':'grey';document.documentElement.dataset.theme=t;try{localStorage.setItem('pp-theme',t);}catch(e){}lab();});})();</script>
 </body>
 </html>
