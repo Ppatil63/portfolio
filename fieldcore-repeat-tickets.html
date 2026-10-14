@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Turning Repeat Tickets Into Automation — Prathamesh Vijay Patil</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
 <meta name="description" content="Prathamesh Vijay Patil is a Technical Support Engineer and Business Analyst in Phoenix, AZ. L2 application support for GE FieldCore's 10,000+ user platform at TCS — SQL data fixes, AWS CloudWatch, REST APIs, ServiceNow. Operations and material planning at Savli Infra. MS Engineering Management, Arizona State University. Open to full-time roles anywhere in the US, any shift.">
 <meta name="keywords" content="Prathamesh Patil, Prathamesh Vijay Patil, Technical Support Engineer Phoenix, Application Support Engineer, Business Analyst Phoenix, L2 Support Engineer, SQL, ServiceNow, AWS CloudWatch, Customer Success Engineer, Operations Analyst, Material Planner, Arizona State University">
 <meta name="author" content="Prathamesh Vijay Patil">
@@ -229,6 +230,11 @@
     padding:8px 15px;border-radius:999px;transition:all .25s ease;
   }
   #themeToggle:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* Problem statement callout — grabs the eye at a glance */
+  .problem-callout{background:rgba(var(--acc-rgb),.09);border:1px solid rgba(var(--acc-rgb),.28);border-left:4px solid var(--accent);border-radius:10px;padding:18px 22px;margin:20px 0 8px}
+  .problem-callout .pc-label{display:block;font-family:'SF Mono','Fira Code',ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+  .problem-callout p{font-family:'Fraunces',Georgia,'Times New Roman',serif;font-style:italic;font-size:19.5px;line-height:1.55;color:var(--bright);margin:0}
 </style>
 </head>
 <body>
@@ -272,7 +278,7 @@
       <h2 class="sec-title" style="text-transform:none;letter-spacing:0;font-size:26px;color:var(--bright)">Turning Repeat Tickets Into Automation</h2>
       <p style="font-size:16px;line-height:1.75">L2 support for GE FieldCore at TCS, where bad data stopped field work. <strong style="color:var(--bright)">Result: ticket flow dropped by around 30% during peak support time.</strong></p>
       <div style="margin-top:16px">
-                <p><span class="label">Problem.</span> The same manual fixes kept coming back as new tickets &mdash; 7 to 15 a day in ServiceNow, across events, purchase orders, scope, and resource allocation.</p>
+                <div class="problem-callout"><span class="pc-label">The problem</span><p>The same manual fixes kept coming back as new tickets &mdash; 7 to 15 a day in ServiceNow, across events, purchase orders, scope, and resource allocation.</p></div>
                 <p><span class="label">What I did.</span> Talked directly with field technicians to understand what they were trying to do, not just what the error said. Fixed bad data with SQL, read AWS CloudWatch logs and REST API payloads to find where things broke, and used Postman to trigger the microservices myself and confirm data moved correctly. Worked with Finance and Contracts so numbers stayed consistent across systems.</p>
                 <p><span class="label">What changed.</span> I documented the recurring issues on Confluence and sorted them into four types &mdash; Data Fix, Integration Issue, Manual Fix, Contract Change &mdash; presented the pattern in weekly status meetings with GE stakeholders, and pushed the dev team to automate the processes behind the repeat tickets. I also helped validate the SAP-to-Oracle data migration for the MENA region.</p>
               </div>
