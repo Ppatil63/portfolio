@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SaaS Onboarding Drop-Off — Case Study · Prathamesh Vijay Patil</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
 <meta name="description" content="Prathamesh Vijay Patil is a Technical Support Engineer and Business Analyst in Phoenix, AZ. L2 application support for GE FieldCore's 10,000+ user platform at TCS — SQL data fixes, AWS CloudWatch, REST APIs, ServiceNow. Operations and material planning at Savli Infra. MS Engineering Management, Arizona State University. Open to full-time roles anywhere in the US, any shift.">
 <meta name="keywords" content="Prathamesh Patil, Prathamesh Vijay Patil, Technical Support Engineer Phoenix, Application Support Engineer, Business Analyst Phoenix, L2 Support Engineer, SQL, ServiceNow, AWS CloudWatch, Customer Success Engineer, Operations Analyst, Material Planner, Arizona State University">
 <meta name="author" content="Prathamesh Vijay Patil">
@@ -231,6 +232,11 @@
     padding:8px 15px;border-radius:999px;transition:all .25s ease;
   }
   #themeToggle:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* Problem statement callout — grabs the eye at a glance */
+  .problem-callout{background:rgba(var(--acc-rgb),.09);border:1px solid rgba(var(--acc-rgb),.28);border-left:4px solid var(--accent);border-radius:10px;padding:18px 22px;margin:20px 0 8px}
+  .problem-callout .pc-label{display:block;font-family:'SF Mono','Fira Code',ui-monospace,Menlo,monospace;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+  .problem-callout p{font-family:'Fraunces',Georgia,'Times New Roman',serif;font-style:italic;font-size:19.5px;line-height:1.55;color:var(--bright);margin:0}
 </style>
 </head>
 <body>
@@ -272,7 +278,7 @@
     <a class="backlink" href="case-studies.html">&#8592; All case studies</a>
     <section>
       <h2 class="sec-title" style="text-transform:none;letter-spacing:0;font-size:26px;color:var(--bright)">SaaS Onboarding Drop-Off</h2>
-      <p style="font-size:16px;line-height:1.75">Only 24% of trial users activate and 6% convert to paid (scenario baseline).</p>
+      <div class="problem-callout"><span class="pc-label">The problem</span><p>Only 24% of trial users activate and 6% convert to paid (scenario baseline).</p></div>
       <p style="font-size:15.5px;line-height:1.75;margin-top:14px"><strong style="color:var(--bright)">What the analysis found:</strong> Onboarding front-loads configuration before any value, and 'activation' was never defined from what converters actually do — the funnel leaks before the core action.</p>
       <p style="font-size:15.5px;line-height:1.75;margin-top:12px"><strong style="color:var(--bright)">The fix:</strong> Define activation from converter behavior (core action + teammate invite) and re-sequence onboarding so value comes before configuration.</p>
       <div class="csmeta"><p><span class="k">Phase:</span> Product · Activation</p><p><span class="k">What I learnt:</span> Activation must be defined from what converters actually do (core action + invite), not from what the signup form collects.</p><p><span class="k">Tools &amp; tech stack:</span> Funnel analysis · cohort comparison (converted vs churned trials) · onboarding re-sequencing · activation metrics</p><p><span class="k">What makes it different:</span> Reorders onboarding so value comes before configuration — the opposite of the standard form-first flow.</p></div>
